@@ -20,10 +20,10 @@ import net.sf.json.JSONObject;
 
 @Component
 public class RefreshAccessTokenTask {
-	public static final String at = "k4qYgHUsWpwsk9uBX_QGUea70ATC-Swya5ssW43IXdJgi7-A2YCZX1FXIOeBknpGiOiy7FAM2d61Dc8PxT-jbh1qYH2lE4GruajNknvv_UIXBLeACAMQA";
+	//public static final String at = "k4qYgHUsWpwsk9uBX_QGUea70ATC-Swya5ssW43IXdJgi7-A2YCZX1FXIOeBknpGiOiy7FAM2d61Dc8PxT-jbh1qYH2lE4GruajNknvv_UIXBLeACAMQA";
 	
 	static{
-		WeiXinContext.setAccessToken(at);
+		//WeiXinContext.setAccessToken(at);
 	}
 	
 	Logger log = LoggerFactory.getLogger(RefreshAccessTokenTask.class);
@@ -41,8 +41,8 @@ public class RefreshAccessTokenTask {
 	private String appsecret;
 	
 	public void refreshAccessTokenTask() {
-		WeiXinContext.setAccessToken(at);
-		/*Map<String,String> map = new HashMap<>();
+		//WeiXinContext.setAccessToken(at);
+		Map<String,String> map = new HashMap<>();
 		map.put("grant_type", "client_credential");
 		map.put("appid", appid);
 		map.put("secret", appsecret);
@@ -52,6 +52,6 @@ public class RefreshAccessTokenTask {
 			WeiXinContext.setAccessToken(ret.getString("access_token"));
 		}else{
 			refreshAccessTokenTask();
-		}*/
+		}
 	}
 }
