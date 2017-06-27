@@ -12,7 +12,7 @@ import com.cooperate.wxh5.wx.util.WeixinUtil;
 
 public class MenuController {
 
-	 private static Logger log = LoggerFactory.getLogger(MenuController.class);
+	/* private static Logger log = LoggerFactory.getLogger(MenuController.class);
 
 	    public static void main(String[] args) {
 	        // 第三方用户唯一凭证
@@ -35,11 +35,6 @@ public class MenuController {
 	        }
 	    }
 
-	    /**
-	     * 组装菜单数据
-	     * 
-	     * @return
-	     */
 	    private static Menu getMenu() {
 	        CommonButton btn11 = new CommonButton();
 	        btn11.setName("天气预报");
@@ -99,15 +94,11 @@ public class MenuController {
 	        btn32.setKey("32");
 	        btn32.setUrl("https://sit.lianzhonghuzhu.com/wxh5/web_login.html");
 
-	       /* CommonButton btn33 = new CommonButton();
+	        CommonButton btn33 = new CommonButton();
 	        btn33.setName("幽默笑话");
 	        btn33.setType("click");
-	        btn33.setKey("33");*/
+	        btn33.setKey("33");
 
-	        
-	        /**
-	         * 微信：  mainBtn1,mainBtn2,mainBtn3底部的三个一级菜单。
-	         */
 	        
 	        ComplexButton mainBtn1 = new ComplexButton();
 	        mainBtn1.setName("了解连众");
@@ -128,13 +119,9 @@ public class MenuController {
 	        mainBtn3.setName("我的互助");
 	        mainBtn3.setSub_button(new CommonButton[] { btn31, btn32 });
 
-	        
-	        /**
-	         * 封装整个菜单
-	         */
 	        Menu menu = new Menu();
 	        menu.setButton(new Button[] { mainBtn1, mainBtn2, mainBtn3 });
 
 	        return menu;
-	    }
+	    }*/
 }
