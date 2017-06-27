@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+<!-- 不使用namespace的话sql搜索定位会比较方便 -->
+<mapper namespace="com.cooperate.wxh5.wx.mapper.TokenMapper">
+
+	<resultMap id="RM" type="com.cooperate.wxh5.wx.entity.accesstoken.Token">
+        <result property="id" column="id"/>        
+        <result property="accessToken" column="access_token"/>        
+        <result property="expiresIn" column="expires_in"/>        
+        <result property="createTime" column="createTime"/>        
+	</resultMap>
+	
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="columns">
+	    <![CDATA[
+		t_id.id,t_access_token.access_token,t_expires_in.expires_in,t_createTime.createTime
+	    ]]>
+	</sql>
+
+	<!-- useGeneratedKeys="true" keyProperty="xxx" for sqlserver and mysql -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+   
+        INSERT INTO t_token (
+	        	id
+		        	,access_token
+		        	,expires_in
+		        	,createTime
+        
+        ) VALUES (
+	        	#{id}
+		        	,#{accessToken}
+		        	,#{expiresIn}
+		        	,#{createTime}
+        )
+    
+		<!--	
+			oracle: order="BEFORE" SELECT sequenceName.nextval AS ID FROM DUAL 
+			DB2: order="BEFORE"" values nextval for sequenceName
+		<selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="userId">
+			SELECT sequenceName.nextval AS ID FROM DUAL 
+        </selectKey>
+		-->
+	</insert>
+  
+	
+
+    <select id="getToken" resultMap="RM">
+    	SELECT 
+    	<include refid="columns" />
+	     FROM t_token as t_token order by createTime desc limit 1
+		
+    </select>
+
+	
+	
+</mapper>
+
