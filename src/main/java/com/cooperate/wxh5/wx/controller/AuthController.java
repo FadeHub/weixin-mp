@@ -35,7 +35,7 @@ import com.google.gson.Gson;
 
 @Controller
 @RequestMapping("/wx")
-public class AuthController {
+public class AuthController extends BaseController{
 	
 	private static final Logger log = LoggerFactory.getLogger(AuthController.class);
 	

@@ -20,4 +20,14 @@ public interface WeiXinUserInfoService {
 	public List<Object> getBatchUserInfo(List<WeiXinUserInfoBatch> list);
 	
 	public List<Object> getUserInfoList(String nextOpenId);
+	
+	public List<Object> getBlackList(String benginOpenId);
+	
+	public List<Object> getCurrentAutoreplyInfo();
+	
+	/**
+	 * 获取用户基本信息
+	 * @return
+	 */
+	public JSONObject getUserInfo(String openid,String accessToken);
 }

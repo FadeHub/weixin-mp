@@ -1,4 +1,4 @@
-package com.cooperate.wxh5.wx.controller;
+package com.cooperate.test;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
